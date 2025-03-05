@@ -71,7 +71,7 @@ return function(_, opts)
     }
     opts.completion = {
         list = {
-            cycle = { from_bottom = fasle, from_top = false },
+            cycle = { from_bottom = false, from_top = false },
             selection = {
                 preselect = true,
                 auto_insert = false,
@@ -92,25 +92,6 @@ return function(_, opts)
                 components = {
                     label = {
                         width = { fill = true, max = math.ceil(max * 0.25) },
-                        text = function(ctx)
-                            local highlights_info = require('colorful-menu').blink_highlights(ctx)
-                            if highlights_info ~= nil then
-                                return highlights_info.label
-                            else
-                                return ctx.label
-                            end
-                        end,
-                        highlight = function(ctx)
-                            local highlights = {}
-                            local highlights_info = require('colorful-menu').blink_highlights(ctx)
-                            if highlights_info ~= nil then
-                              highlights = highlights_info.highlights
-                            end
-                        for _, idx in ipairs(ctx.label_matched_indices) do
-                            table.insert(highlights, { idx, idx + 1, group = 'BlinkCmpLabelMatch '})
-                        end
-                        return highlights
-                      end,
                     },
                     kind = {
                         ellipsis = true,
@@ -142,24 +123,11 @@ return function(_, opts)
         ghost_text = { enabled = false },
     }
     opts.sources = {
-        default = { 'snippets', 'lsp', 'path', 'buffer', 'lazydev', 'markdown' },
-        -- providers = {
-        --     lsp = {
-        --         score_offset = 250,
-        --     },
-        --     snippets = {
-        --         score_offset = 200,
-        --     },
-        --     lazydev = {
-        --         name = 'Development',
-        --         module = 'lazydev.integrations.blank',
-        --         score_offset = 100, 
-        --     },
-        --     markdown = {
-        --         name = 'RenderMarkdown',
-        --         module = 'render-markdown.integ.link',
-        --         fallback = { 'lsp' }
-        --     }
-        -- },
+        default = { 'lsp', 'path', 'buffer' },
+        providers = {
+            lsp = {
+                score_offset = 250,
+            },
+        },
    }
 end
