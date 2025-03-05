@@ -1,5 +1,6 @@
 local lsp_servers = {
     lua_ls = require 'custom.Lang.lsp.lua_ls',
+    clangd = require 'custom.Lang.lsp.clangd',
 }
 
 -- INFO: mason_ensure_installed
