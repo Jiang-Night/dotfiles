@@ -1,6 +1,11 @@
 local lsp_servers = {
     lua_ls = require 'custom.Lang.lsp.lua_ls',
     clangd = require 'custom.Lang.lsp.clangd',
+    rust_analyzer = require 'custom.Lang.lsp.rust_analyzer',
+    jsonls = require 'custom.Lang.lsp.jsonls',
+    bashls = {
+        filetypes = { 'sh', 'zsh' }
+    },
 }
 
 -- INFO: mason_ensure_installed
@@ -15,6 +20,7 @@ return {
     dependencies = {
         -- 自动将LSP和相关工具安装到nvim的stpath
         { 'williamboman/mason.nvim', opts = { ui = { border = vim.g.borderStyle, backdrop = 100 } } }, --WARN: 必须在依赖之前加载
+        { 'WhoIsSethDaniel/mason-tool-installer.nvim' }, -- mason自动安装
         { 'williamboman/mason-lspconfig.nvim' },
         { 'folke/snacks.nvim' },
         {'saghen/blink.cmp'},
@@ -35,6 +41,7 @@ return {
             }
         )
 
+        require('mason-tool-installer').setup { ensure_installed = mason_ensure_installed }
         for server_name, server_opts in pairs(lsp_servers) do
             server_opts.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_opts.capabilities or {})
             server_opts.handlers = vim.tbl_deep_extend('force', {}, server_opts.handlers or {})
