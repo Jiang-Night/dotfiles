@@ -5,7 +5,10 @@ local formaters = {
     json = { 'fixjson' },
     jsonc = { 'fixjson' },
     zsh = { 'beautysh' },
-    shell = { 'beautysh' },
+    sh = { 'beautysh' },
+    rust = { 'rustfmt' },
+    yaml = { 'tamlfmt' },
+    xml = { 'xmlformatter' }
 }
 return { --AutoFormat
     'stevearc/conform.nvim',

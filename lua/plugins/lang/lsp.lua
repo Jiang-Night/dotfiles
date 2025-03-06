@@ -5,6 +5,7 @@ local lsp_servers = {
 
 -- INFO: mason_ensure_installed
 local mason_ensure_installed = {
+    'stylua',
     'lua-language-server',
 }
 

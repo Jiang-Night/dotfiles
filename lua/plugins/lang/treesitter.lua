@@ -4,6 +4,10 @@ local ensure_installed = {
 	'vim',
 	'c',
 	'json',
+	"rust",
+	"yaml",
+	"ini",
+	"markdown",
 }
 return { -- 高亮显示，编辑和导航代码
 	'nvim-treesitter/nvim-treesitter',
