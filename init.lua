@@ -15,8 +15,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 require 'config.options' -- INFO: Basic Setting options
 require 'config.keymaps' -- INFO: Basic Keymaps
 require 'config.command' -- INFO: Basic AutoCommands
 require 'lazy_setup'     -- INFO: Loading lazy plugins
+
+vim.cmd.colorscheme 'catppuccin'
