@@ -34,7 +34,7 @@ return {
             },
         },
     },
-    keys = {
+    keys = vim.list_extend(require('custom.Snacks.picker').keys,{
         {
             '<leader>t',
             function()
@@ -43,5 +43,5 @@ return {
             mode = { 'n', 'i', 'v', 't' },
             { decs = 'Toggle Float Terminal' },
         },
-    },
+    }),
 }
