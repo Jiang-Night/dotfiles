@@ -3,6 +3,7 @@ local lsp_servers = {
     clangd = require 'custom.Lang.lsp.clangd',
     rust_analyzer = require 'custom.Lang.lsp.rust_analyzer',
     jsonls = require 'custom.Lang.lsp.jsonls',
+    basedpyright = require 'custom.Lang.lsp.basedpyright',
     bashls = {
         filetypes = { 'sh', 'zsh' }
     },

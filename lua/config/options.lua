@@ -6,6 +6,8 @@ vim.g.maplocalleader = ' '
 -- 在终端中安装并选择了 Nerd Font，则设置为 true
 vim.g.have_nerd_font = true
 
+vim.g.Username = 'JiangNight'
+
 -- [[ 设置选项 ]]
 
 -- 设置行号
@@ -22,7 +24,7 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
--- 启用中断缩进
+-- 启用换行缩进
 vim.opt.breakindent = true
 
 -- 保存撤销历史记录
@@ -57,3 +59,25 @@ vim.opt.cursorline = true
 
 -- 保持在光标上方和下方的最小屏幕线数
 vim.opt.scrolloff = 10
+
+
+-- 4格tab
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.laststatus = 3
+-- 禁用击键回显
+vim.opt.showcmd = false
+-- 设置全局窗口选项，禁止折行
+vim.wo.wrap = false
+
+-- 填充折叠字符
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- 启用折叠
+vim.opt.foldenable = true
+-- 折叠层级
+vim.opt.foldlevel = 99
+-- 启动时折叠层级
+vim.opt.foldlevelstart = 99
+-- 命令行高度
+vim.opt.cmdheight = 0

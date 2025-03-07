@@ -1,3 +1,4 @@
+-- 代码格式化
 local formaters = {
     lua = { 'stylua' },
     c = { 'clang-format' },
@@ -27,7 +28,7 @@ return { --AutoFormat
     opts = {
         notify_on_error = false,
         format_on_save = {
-            lsp_format = 'fallbacl',
+            lsp_format = 'fallback',
             timeout_ms = 500,
         },
         formattters_by_ft = formaters,

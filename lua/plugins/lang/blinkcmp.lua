@@ -1,3 +1,4 @@
+-- 代码补全
 return {
     'saghen/blink.cmp',
     event = 'InsertEnter',

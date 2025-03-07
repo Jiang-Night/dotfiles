@@ -1,4 +1,5 @@
 --INFO: treesitter ensure_installed
+-- 代码高亮
 local ensure_installed = {
 	'lua',
 	'vim',
