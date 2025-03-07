@@ -4,6 +4,7 @@ require('lazy').setup {
         -- 通过模块化方式导入插件配置
         { import = 'plugins.lang' },
         { import = 'plugins.theme' },
+        { import = 'plugins.utils' },
     },
     git = {
         timeout = 300, -- 设置 Git 操作的超时时间为 300 秒
