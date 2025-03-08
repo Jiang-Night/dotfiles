@@ -12,6 +12,7 @@ return {
             nvimtree = true,
             treesitter = true,
             mason = true,
+            rainbow_delimiters = true,
             dropbar = {
                 enabled = true,
                 color_mode = true,
