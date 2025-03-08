@@ -6,7 +6,7 @@ return {
         require('rainbow-delimiters.setup').setup {
             highlight = {
                 'RainbowDelimiterRed',
-                'BufferLinePick' --对应二级括号，红色高亮组
+                'RainbowDelimiterYellow' --对应二级括号
                 'RainbowDelimiterBule',
                 'RainbowDelimiterOrange',
                 'RainbowDelimiterGreen',
