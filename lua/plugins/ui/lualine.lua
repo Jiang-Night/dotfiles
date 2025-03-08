@@ -1,3 +1,4 @@
+-- 低栏状态栏 (?)
 local lsp_progress_config = require 'custom.Lualine.lsp_progress'
 return {
 	'nvim-lualine/lualine.nvim',
